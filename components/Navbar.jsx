@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Navbar() {
   return (
-    <div className="flex flex-row py-2 px-8 font-poppins">
+    <div className="flex flex-row py-2 px-8">
       {/* bersuara.space logo */}
       <Link href="/">
         <a className="text-lg font-medium">

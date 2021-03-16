@@ -1,58 +1,53 @@
 import Head from 'next/head'
+import Image from 'next/image'
 
 export default function Home() {
-  return (
-    <div>
-      <Head>
-        <title>bersuara.space</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+  return (<>
+    <Head>
+      <title>bersuara.space</title>
+    </Head>
 
-      <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+    <div className="relative min-h-screen bg-white-dark">
+      <div className="container flex flex-col mx-auto pt-20">
 
-        <p>
-          Get started by editing{' '}
-          <code>pages/index.js</code>
-        </p>
+        <div className="flex flex-row px-20">
+          <div className="flex flex-col w-3/5">
+            <h1 className="text-56 font-bold text-gray-dark leading-tight">
+              Let's break the chain.
+            </h1>
 
-        <div>
-          <a href="https://nextjs.org/docs">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+            <h1 className="text-56 font-bold text-purple leading-tight">
+              Together.
+            </h1>
 
-          <a href="https://nextjs.org/learn">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a href="https://github.com/vercel/next.js/tree/master/examples">
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+            <p className="mt-6 text-xl font-normal text-gray">
+              We are dedicated to ending the chain of sexual <br/> harassment in Indonesia and to support victims in need.  
             </p>
-          </a>
-        </div>
-      </main>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" />
-        </a>
-      </footer>
+            <div className="flex flex-row mt-24">
+              <button className="w-60 h-14 text-lg font-semibold text-white bg-purple rounded-xl focus:outline-none">
+                Get Help
+              </button>
+
+              <button className="w-60 h-14 ml-8 text-lg font-semibold text-gray rounded-xl border-2 border-gray-light focus:outline-none">
+                Learn More
+              </button>
+            </div>
+          </div>
+
+          <div className="relative -my-4 w-2/5 h-auto">
+            <Image
+              src="/assets/landing/landing-1.svg"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
+        </div>
+
+        <img
+          src="/icons/landing/chevron-down.svg"
+          className="w-16 h-12 mt-12 self-center" />
+      </div>
     </div>
-  )
+  </>)
 }

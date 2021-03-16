@@ -15,8 +15,13 @@ module.exports = {
         },
 
         white: {
+          DEFAULT: '#FFFFFF',
           dark: '#F4F4F4',
         },
+      },
+
+      fontSize: {
+        '56': '3.5rem',
       },
 
       fontFamily: {
