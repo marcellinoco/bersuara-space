@@ -1,4 +1,4 @@
-env: standard
+env: flex
 runtime: nodejs14
 service: default
 
