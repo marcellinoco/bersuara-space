@@ -4,4 +4,4 @@ steps:
 - name: "gcr.io/cloud-builders/npm"
   args: ["run", "build"]
 - name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy", "app/app.yaml"]
+  args: ["app", "deploy"]

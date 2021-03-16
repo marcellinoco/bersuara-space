@@ -1,5 +1,5 @@
-env: flex
-runtime: nodejs
+env: standard
+runtime: nodejs14
 service: default
 
 handlers:
