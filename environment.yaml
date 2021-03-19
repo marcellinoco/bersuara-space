@@ -1,6 +1,5 @@
 env: flex
 runtime: nodejs
-service: default
 
 automatic_scaling:
     cool_down_period_sec: 180
