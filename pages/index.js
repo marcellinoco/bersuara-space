@@ -12,15 +12,15 @@ export default function Home() {
 
         <div className="flex flex-row px-20">
           <div className="flex flex-col w-3/5">
-            <h1 className="text-56 font-bold text-gray-dark leading-tight">
+            <h1 className="text-56 font-bold text-gray-dark leading-tight select-none">
               Let's break the chain.
             </h1>
 
-            <h1 className="text-56 font-bold text-purple leading-tight">
+            <h1 className="text-56 font-bold text-purple leading-tight select-none">
               Together.
             </h1>
 
-            <p className="mt-6 text-xl font-normal text-gray">
+            <p className="mt-6 text-xl font-normal text-gray select-none">
               We are dedicated to ending the chain of sexual <br/> harassment in Indonesia and to support victims in need.  
             </p>
 

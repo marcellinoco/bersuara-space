@@ -12,7 +12,7 @@ export default function Navbar() {
       </Link>
 
       {/* Navigation links */}
-      <div className="flex flex-row self-center text-sm font-normal">
+      <div className="flex flex-row self-center text-sm font-normal select-none">
         <Link href="">
           <a className="ml-16">Support</a>
         </Link>
