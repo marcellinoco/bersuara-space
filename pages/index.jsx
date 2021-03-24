@@ -1,7 +1,24 @@
+import React, { useState, useEffect } from 'react'
+
 import Head from 'next/head'
 import Image from 'next/image'
 
+import { getFirestore } from '@utils/firebase/firebase'
+
 export default function Home() {
+  // console.log(contacts)
+  const [contacts, setContacts] = useState([])
+
+  const fetchContacts = async () => {
+    let contactsResponse = await fetch("/api/contacts/getContacts")
+    if (contactsResponse.ok) {
+      let contactsJson = await contactsResponse.json()
+      setContacts(contactsJson)
+    }
+  }
+
+  useEffect(() => fetchContacts(), [])
+
   return (<>
     <Head>
       <title>bersuara.space</title>
@@ -48,6 +65,28 @@ export default function Home() {
           src="/icons/landing/chevron-down.svg"
           className="w-16 h-12 mt-12 self-center" />
       </div>
+
+      { contacts ? (
+        contacts.map((contact) => (
+          <h1 key={contact.name}>{contact.name}</h1>
+        ))
+      ) : null }
     </div>
   </>)
 }
+
+// Home.getInitialProps = async() => {
+//   const db = getFirestore()
+//   const contactsRef = db.collection("contacts")
+//   const snapshot = await contactsRef.get();
+
+//   let contacts = []
+
+//   if (snapshot.empty) {
+//     console.log("No Documents!")
+//   } else {
+//     snapshot.forEach(doc => contacts.push(doc.data()))
+//   }
+
+//   return { contacts: contacts }
+// }
