@@ -1,14 +1,16 @@
-import firebase from 'firebase'
-import 'firebase/firestore'
+import firebase from 'firebase-admin'
 
-import authConfig from './authConfig'
+var serviceAccount = require('./firebase-service-account-key.json')
 
 /**
  * Initialize Firebase (if not yet initialized), and return its instance.
  * @returns firebase instance
  */
 function getFirebase() {
-  if (!firebase.apps.length) firebase.initializeApp(authConfig)
+  if (!firebase.apps.length) firebase.initializeApp({
+    credential: firebase.credential.cert(serviceAccount),
+    databaseURL: "https://bersuara-space-default-rtdb.firebaseio.com",
+  })
   return firebase
 }
 
