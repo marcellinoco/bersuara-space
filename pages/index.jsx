@@ -3,10 +3,7 @@ import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 
-import { getFirestore } from '@utils/firebase/firebase'
-
 export default function Home() {
-  // console.log(contacts)
   const [contacts, setContacts] = useState([])
 
   const fetchContacts = async () => {
@@ -26,7 +23,6 @@ export default function Home() {
 
     <div className="relative min-h-screen bg-white-dark">
       <div className="container flex flex-col mx-auto pt-20">
-
         <div className="flex flex-row px-20">
           <div className="flex flex-col w-3/5">
             <h1 className="text-56 font-bold text-gray-dark leading-tight select-none">
@@ -74,19 +70,3 @@ export default function Home() {
     </div>
   </>)
 }
-
-// Home.getInitialProps = async() => {
-//   const db = getFirestore()
-//   const contactsRef = db.collection("contacts")
-//   const snapshot = await contactsRef.get();
-
-//   let contacts = []
-
-//   if (snapshot.empty) {
-//     console.log("No Documents!")
-//   } else {
-//     snapshot.forEach(doc => contacts.push(doc.data()))
-//   }
-
-//   return { contacts: contacts }
-// }

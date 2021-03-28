@@ -25,7 +25,7 @@ export default function Navbar() {
           <a className="ml-16">News</a>
         </Link>
 
-        <Link href="/">
+        <Link href="/contacts">
           <a className="ml-16">Contacts</a>
         </Link>
       </div>
