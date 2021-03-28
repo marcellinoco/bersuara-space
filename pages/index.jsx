@@ -1,7 +1,21 @@
+import React, { useState, useEffect } from 'react'
+
 import Head from 'next/head'
 import Image from 'next/image'
 
 export default function Home() {
+  const [contacts, setContacts] = useState([])
+
+  const fetchContacts = async () => {
+    let contactsResponse = await fetch("/api/contacts/getContacts")
+    if (contactsResponse.ok) {
+      let contactsJson = await contactsResponse.json()
+      setContacts(contactsJson)
+    }
+  }
+
+  useEffect(() => fetchContacts(), [])
+
   return (<>
     <Head>
       <title>bersuara.space</title>
@@ -9,7 +23,6 @@ export default function Home() {
 
     <div className="relative min-h-screen bg-white-dark">
       <div className="container flex flex-col mx-auto pt-20">
-
         <div className="flex flex-row px-20">
           <div className="flex flex-col w-3/5">
             <h1 className="text-56 font-bold text-gray-dark leading-tight select-none">
@@ -48,6 +61,12 @@ export default function Home() {
           src="/icons/landing/chevron-down.svg"
           className="w-16 h-12 mt-12 self-center" />
       </div>
+
+      { contacts ? (
+        contacts.map((contact) => (
+          <h1 key={contact.name}>{contact.name}</h1>
+        ))
+      ) : null }
     </div>
   </>)
 }
