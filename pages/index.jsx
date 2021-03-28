@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
 import Head from 'next/head'
-import Image from 'next/image'
 
 export default function Home() {
   const [contacts, setContacts] = useState([])
@@ -22,7 +21,7 @@ export default function Home() {
     </Head>
 
     <div className="relative min-h-screen bg-white-dark">
-      <div className="container flex flex-col mx-auto pt-20">
+      <div className="container flex flex-col mx-auto pt-20 pb-10">
         <div className="flex flex-row px-20">
           <div className="flex flex-col w-3/5">
             <h1 className="text-56 font-bold text-gray-dark leading-tight select-none">
@@ -48,25 +47,16 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative -my-4 w-2/5 h-auto">
-            <Image
-              src="/assets/landing/landing-1.svg"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
+          <img 
+            src="/assets/landing/landing-1.svg"
+            className="-my-4 w-2/5 h-auto"
+          />
         </div>
 
         <img
           src="/icons/landing/chevron-down.svg"
           className="w-16 h-12 mt-12 self-center" />
       </div>
-
-      { contacts ? (
-        contacts.map((contact) => (
-          <h1 key={contact.name}>{contact.name}</h1>
-        ))
-      ) : null }
     </div>
   </>)
 }
