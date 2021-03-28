@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 8080",
-    "deploy": "npm run build && gcloud app deploy"
+    "start": "next start",
+    "deploy": "npm run build"
   },
   "dependencies": {
     "firebase": "^8.3.1",
