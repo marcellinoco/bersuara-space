@@ -9,6 +9,7 @@ export default function ContactsRegion({ regionName, contactsList, className }) 
 
       { contactsList.map((contactDetails) => (
         <ContactDetails 
+          key={contactDetails.name}
           contactDetails={contactDetails}
           className="mt-4"
         />

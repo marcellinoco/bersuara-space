@@ -3,18 +3,6 @@ import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 
 export default function Home() {
-  const [contacts, setContacts] = useState([])
-
-  const fetchContacts = async () => {
-    let contactsResponse = await fetch("/api/contacts/getContacts")
-    if (contactsResponse.ok) {
-      let contactsJson = await contactsResponse.json()
-      setContacts(contactsJson)
-    }
-  }
-
-  useEffect(() => fetchContacts(), [])
-
   return (<>
     <Head>
       <title>bersuara.space</title>
