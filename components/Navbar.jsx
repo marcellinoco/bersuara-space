@@ -8,9 +8,10 @@ export default function Navbar() {
       <div className="flex flex-row self-center place-items-center my-2 text-sm font-normal select-none">
         {/* bersuara.space logo */}
         <Link href="/">
-          <a className="text-lg font-medium">
-            <span className="text-purple">bersuara</span>.space
-          </a>
+          <a><img
+            src="/assets/bersuara-space-logo.svg"
+            className="h-6 my-0.5 ml-8"
+          /></a>
         </Link>
 
         <Link href="/">
